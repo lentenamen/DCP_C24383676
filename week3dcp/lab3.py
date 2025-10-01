@@ -22,11 +22,8 @@ def print_stars():
     name = df['Display Name']
     distance = df['Distance']
     x = df['Xg']
-
     y = df['Yg']
-
     z = df['Zg']
-
     for i in range(5):
         print(name[i], distance[i], x[i], y[i], z[i])
 
@@ -46,14 +43,6 @@ def draw_grid():
 
     for j in range(50, py5.width, 50):
         py5.line(50, j, py5.width - 50, j)
-
-def stars():
-    global df
-    #x line
-    x = df['Xg'][1]
-    y = df['Yg'][1]
-    py5.circle(x,y,20)
-    
 
 
 
