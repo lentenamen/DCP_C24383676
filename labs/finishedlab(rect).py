@@ -35,6 +35,7 @@ def draw():
             
             py5.rect(half_w,0,half_w,half_h)
 
+
         elif py5.mouse_x < half_w and py5.mouse_y < half_h:
             
             py5.rect(0,0,half_w,half_h)
