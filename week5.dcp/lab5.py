@@ -11,7 +11,7 @@ def load_abc_file(filename):
         print("first 20 lines:")
         for line in lines[:20]:
             print(line.rstrip())
-            
+
         print("last 10 lines:")
         for line in lines[-10:]:
             print(line.strip())
@@ -57,12 +57,13 @@ def parse_all_tunes(lines):
     """Parse all tunes from lines"""
     tunes = []
     current_tune_lines = []
+    blank_count = 0
 
     for line in lines:
         line = line.rstrip()
 
         if not line.strip():
-            continue
+            blank_count = blank_count + 1
 
         if line.startswith("X:"):
             if current_tune_lines:
@@ -77,6 +78,7 @@ def parse_all_tunes(lines):
         tunes.append(tune)
 
     #test
+    print(f"\nFound {blank_count} blank lines")
     print(f"\nFound {len(tunes)} tunes")
     print("\nFirst tune:")
     print(tunes[0])
