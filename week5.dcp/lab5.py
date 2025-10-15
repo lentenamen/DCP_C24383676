@@ -81,7 +81,7 @@ def parse_all_tunes(lines):
     print(f"\nFound {blank_count} blank lines")
     print(f"\nFound {len(tunes)} tunes")
     print("\nFirst tune:")
-    print(tunes[0])
+    print(tunes[1])
     print("\nLast tune:")
     print(tunes[-1])   
     
@@ -114,8 +114,7 @@ print(df.columns)
 print("\n=== TUNE TYPE COUNTS ===")
 # TODO: Your code here
 print("Amount of tunes")
-print(df.shape)
-
+print(df['tune_type'].value_counts())
     
 print("\n=== KEY COUNTS ===")
 # TODO: Your code here
@@ -123,3 +122,7 @@ print(df['key'].value_counts())
     
 print("\n=== ALCOHOLIC DRINKS IN TITLES ===")
 # TODO: Your code here
+alcohol = df['title'].str.contains(r'\bwhiskey\b|\bbrandy\b|\bbeer\b|\bale\b|\bwine\b|\bwhisky\b|\bpunch\b|\bporter\b|\brum\b|\bgin\b', case=False, na=False)
+print(f"There are {alcohol.sum()} tunes mentioning alcohol")
+print(df.loc[alcohol, ['X', 'title']])
+df.to_csv('parsed_tunes.csv', index=False)
