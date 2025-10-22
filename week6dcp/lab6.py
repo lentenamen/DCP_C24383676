@@ -27,7 +27,6 @@ def parse_sonnets(lines):
             if char not in "IVXLCDM":
                 is_romannum = False
                 break
-
         
         if is_romannum:
             #saves sonnet before parsing new one
