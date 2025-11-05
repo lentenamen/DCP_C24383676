@@ -13,7 +13,7 @@ def parse_sonnets(lines):
     current_sonnet = {} #temp dictionary for current sonnet
     current_RN = None   #roman numeral id for sonnet
     current_lines = []  #list of lines for current sonnet
-     
+    
 
     for line in lines:
         line = line.strip()     #remove whitespace
